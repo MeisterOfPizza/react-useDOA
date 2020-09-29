@@ -1,6 +1,6 @@
 import React from 'react'
 import Animal from '../Animal'
-import useDOA from '../extensions/useDOA'
+import useDOA from 'react-usedoa'
 
 let startAt = 0;
 let endAt   = 0;
