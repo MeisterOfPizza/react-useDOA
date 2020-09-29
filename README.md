@@ -1,12 +1,14 @@
-# About
-useDOA, or use **D**ynamic **O**bject **A**ssignment is a React hook designed to allow programmers to
-update and assign new values to fields in JavaScript objects and class instances without having
-to make a set state call everytime. This not only allows the programmer to change a single field without having to
-re-create or clone the object or class instance, but also provides clean and easily readable code, the ability for easy changes to code and allows them to change fields without causing a
-re-render (if wanted). **useDOA works in both React.js and React Native projects, although the example project ONLY works in React.js, however, the same code templates can be used in React Native.**
+## About
+useDOA, or use **D**ynamic **O**bject **A**ssignment is a React hook designed to allow programmers to update and assign new values to fields in JavaScript objects and class instances without having to make a set state call everytime. This not only allows the programmer to change a single field without having to re-create or clone the object or class instance, but also provides clean and easily readable code, the ability for easy changes to code and allows them to change fields without causing a re-render (if wanted). **useDOA works in both React.js and React Native projects, although the example project ONLY works in React.js, however, the same code templates can be used in React Native.**
 
-# Usage
-## JS Object
+## Installation
+Run: `npm i react-usedoa`
+
+## Usage
+### Importing
+Import with `import useDOA from 'react-usedoa'`
+
+### JS Object
 ```javascript
 // Standard React hook component
 const DisplayBuilding = () => {
@@ -19,7 +21,7 @@ const DisplayBuilding = () => {
                 Click to increase height by 5
             </button>
             <p>
-                {building.name}'s height is {building.height}.
+                {building.name} height is {building.height}.
             </p>
         </div>
     );
@@ -29,7 +31,7 @@ const DisplayBuilding = () => {
 export default DisplayBuilding;
 ```
 
-## JS Class Instance
+### JS Class Instance
 ```javascript
 // Standard JS class
 class Building {
@@ -50,7 +52,7 @@ const DisplayBuilding = () => {
                 Click to increase height by 5
             </button>
             <p>
-                {building.name}'s height is {building.height}.
+                {building.name} height is {building.height}.
             </p>
         </div>
     );
@@ -60,9 +62,7 @@ const DisplayBuilding = () => {
 export default DisplayBuilding;
 ```
 
-As you can see, DOA allows for the same syntax to be used **irregardless** of type (Object or Class Instance).
-Clicking the "Click to increase height by 5" button will cause a re-render of the DisplayBuilding component.
-The standard alternative way of updating the building's height would be
+As you can see, DOA allows for the same syntax to be used **irregardless** of type (Object or Class Instance). Clicking the "Click to increase height by 5" button will cause a re-render of the DisplayBuilding component. The standard alternative way of updating the building's height would be
 ```javascript
 setBuilding({ ...building, height: building.height + 5 });
 ```
@@ -72,7 +72,7 @@ setBuilding(new Building(building.name, building.height + 5));
 ```
 which is **neither very efficient** (especially on larger objects or class instances with performance heavy constructors) **nor easy to read**.
 
-## Extended Example
+### Extended Example
 ```javascript
 const [furniture, furnitureMap] = useDOA({ name: "Cool Wooden Chair", price: 10 });
 
@@ -111,15 +111,15 @@ console.log(furnitureMap.name.get()); // "Chair"
  */
 ```
 
-# Benefits
+## Benefits
 * Easier to read.
 * Better performance (larger objects and class instances only).
 * The ability to change an object's or class instance's field(s) without causing a re-render if one wants.
 
-# Limitations
+## Limitations
 * There is currently no way of assigning a new object or class instance reference to the DOA state. You can only change the fields of the object or class instance.
 * The initial value assignment to the DOA takes a bit longer to complete as the DOA creates a map of all the fields.
 * Speed and readability is improved at the cost of more memory used (because of the map).
 
-# License
+## License
 MIT. Copyright (c) 2020 Emil Engelin.
