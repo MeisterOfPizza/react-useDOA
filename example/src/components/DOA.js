@@ -6,8 +6,8 @@ let startAt = 0;
 let endAt   = 0;
 
 const DOA = () => {
-    const [animal1, map1] = useDOA(new Animal(0, "Dog", 5));
-    const [animal2, map2] = useDOA(new Animal(0, "Bird", 2));
+    const [animal1, updateAnimal1] = useDOA(new Animal(0, "Dog", 5));
+    const [animal2, updateAnimal2] = useDOA(new Animal(0, "Bird", 2));
 
     endAt = performance.now();
     console.log(`DOA render, took ${endAt - startAt} ms`);
@@ -29,10 +29,14 @@ const DOA = () => {
 
                     startAt = performance.now();
 
-                    map1.name.set("Cat");
-                    map1.id.set(map1.id.get() + 1);
-                    map2.name.set("Turtle");
-                    map2.age.set(animal2.age + 10);
+                    animal1.id++;
+                    animal1.name = "Cat";
+
+                    animal2.name = "Turtle";
+                    animal2.age += 10;
+
+                    updateAnimal1();
+                    updateAnimal2();
                 }}>
                 Click
             </button>
