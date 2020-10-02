@@ -1,7 +1,7 @@
 {
   "name": "react-usedoa",
-  "version": "1.1.3",
-  "description": "Allows instances of classes and objects to be changed dynamically without needing to create a new instance of the same object with cloned fields to trigger a re-render.",
+  "version": "2.0.0",
+  "description": "Allows the mutation of objects and prop objects using standard left-to-right field assignments (eg. fruit.name = \"Apple\"). Only works with React.js and React Native.",
   "main": "index.js",
   "directories": {
     "example": "example"
