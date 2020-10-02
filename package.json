@@ -25,8 +25,12 @@
   "typings": "index.d.ts",
   "keywords": [
     "react",
-    "react-hook",
+    "react-native",
+    "react-hooks",
+    "react-native-hooks",
     "hook",
+    "state",
+    "state-management",
     "mobile",
     "ios",
     "android",
