@@ -1,6 +1,6 @@
 {
   "name": "react-usedoa",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Allows the mutation of objects and prop objects using standard left-to-right field assignments (eg. fruit.name = \"Apple\"). Only works with React.js and React Native.",
   "main": "index.js",
   "directories": {
